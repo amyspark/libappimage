@@ -4,7 +4,7 @@ libappimage_shared_files = files(
     'digest.c',
 )
 
-libappimage_shared = static_library(
+appimage_shared = static_library(
     'appimage_shared',
     libappimage_shared_files,
     include_directories: libappimage_include_directories,
@@ -12,8 +12,8 @@ libappimage_shared = static_library(
     install: true,
 )
 
-libappimage_shared_dep = declare_dependency(
-    link_with: libappimage_shared,
+libappimage_shared = declare_dependency(
+    link_with: appimage_shared,
     include_directories: libappimage_include_directories,
     dependencies: libappimage_hashlib,
 )

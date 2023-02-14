@@ -1,6 +1,6 @@
 fixtures = declare_dependency(
     include_directories: include_directories('.'),
-    dependencies: [test_dep, gtest, xdg_basedir_dep],
+    dependencies: [test_dep, gtest, xdg_basedir],
 )
 
 test_libappimage_files = files(
@@ -33,7 +33,7 @@ test_shared_files = files(
 test_shared = executable(
     'test_shared',
     test_shared_files,
-    dependencies: [fixtures, libappimage_shared_dep],
+    dependencies: [fixtures, libappimage_shared],
     # needed for some const->non-const conversions
     cpp_args: cxx.get_supported_arguments('-fpermissive')
 )

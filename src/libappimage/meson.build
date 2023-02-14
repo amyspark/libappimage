@@ -16,7 +16,7 @@ libappimage_private_deps = [
     core,
     appimage_utils,
     libarchive,
-    xdg_basedir_dep,
+    xdg_basedir,
     xdg_utils_desktop_entry,
     xdg_utils_base_dir, 
     libappimage_hashlib,
@@ -32,7 +32,7 @@ if desktop_integration.enabled()
 endif
 
 libappimage_public_deps = [
-    libappimage_shared_dep,
+    libappimage_shared,
     libcairo,
     librsvg
 ]
