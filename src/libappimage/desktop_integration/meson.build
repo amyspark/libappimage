@@ -10,11 +10,10 @@ if thumbnailer.enabled()
     )
 endif
 
-desktop_integration_include_directories = libappimage_include_directories + include_directories('.') 
+desktop_integration_include_directories = include_directories('.') 
 
 appimage_desktop_integration = declare_dependency(
     sources: appimage_desktop_integration_sources,
-    dependencies: [libappimage_hashlib, boost, libarchive, libsquashfuse, libglib, xdg_utils_desktop_entry, xdg_utils_base_dir],
-    compile_args: libappimage_module_flags,
+    dependencies: [libappimage_module_definitions, libappimage_hashlib, boost, libarchive, libsquashfuse, libglib, xdg_utils_desktop_entry, xdg_utils_base_dir],
     include_directories: desktop_integration_include_directories,
 )

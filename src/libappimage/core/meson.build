@@ -10,7 +10,5 @@ core_files = files(
 
 core = declare_dependency(
     sources: core_files,
-    dependencies: [libappimage_hashlib, boost, xdg_utils_desktop_entry, libarchive, libsquashfuse],
-    compile_args: libappimage_module_flags,
-    include_directories: libappimage_include_directories,
+    dependencies: [libappimage_module_definitions, libappimage_hashlib, boost, xdg_utils_desktop_entry, libarchive, libsquashfuse],
 )

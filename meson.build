@@ -10,11 +10,14 @@ thumbnailer = get_option('thumbnailer')
 # TODO: implement git describe --tags -C $MESON_SOURCE_ROOT
 # with fallback to project version and store in -DGIT_COMMIT
 
-libappimage_module_flags = [
-  '-D_FILE_OFFSET_BITS=64',
-  '-D_LARGEFILE_SOURCE',
-  '-DENABLE_BINRELOC',
-]
+libappimage_module_definitions = declare_dependency(
+  compile_args: [
+    '-D_FILE_OFFSET_BITS=64',
+    '-D_LARGEFILE_SOURCE',
+    '-DENABLE_BINRELOC',
+  ],
+  include_directories: include_directories('.')
+)
 
 # cmake/dependencies.cmake
 xz = dependency('liblzma')
@@ -36,6 +39,5 @@ librsvg = dependency('librsvg-2.0')
 # lib/cmakelists.txt
 gtest = dependency('gtest_main', disabler: true)
 
-subdir('include')
 subdir('src')
 subdir('tests')

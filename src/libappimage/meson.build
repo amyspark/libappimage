@@ -13,6 +13,7 @@ if desktop_integration.enabled()
 endif
 
 libappimage_private_deps = [
+    libappimage_module_definitions,
     core,
     appimage_utils,
     libarchive,
@@ -38,14 +39,12 @@ libappimage_public_deps = [
 ]
 
 libappimage_deps = libappimage_private_deps + libappimage_public_deps
-libappimage_incs = libappimage_include_directories + include_directories('.')
+libappimage_incs = include_directories('.')
 
 libappimage_static = static_library(
     'appimage_static',
     libappimage_sources,
     pic: true,
-    c_args: libappimage_module_flags,
-    cpp_args: libappimage_module_flags,
     include_directories: libappimage_incs,
     dependencies: libappimage_deps,
 )
@@ -58,8 +57,6 @@ libappimage_lib = shared_library(
     'appimage',
     libappimage_sources,
     libappimage_legacy_sources,
-    c_args: libappimage_module_flags,
-    cpp_args: libappimage_module_flags,
     include_directories: libappimage_incs,
     dependencies: libappimage_deps,
     install: true,

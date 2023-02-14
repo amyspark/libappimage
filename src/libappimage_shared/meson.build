@@ -4,18 +4,18 @@ libappimage_shared_files = files(
     'digest.c',
 )
 
+appimage_deps = [libappimage_module_definitions, libappimage_hashlib]
+
 appimage_shared = static_library(
     'appimage_shared',
     libappimage_shared_files,
-    include_directories: libappimage_include_directories,
-    dependencies: libappimage_hashlib,
+    dependencies: appimage_deps,
     install: true,
 )
 
 libappimage_shared = declare_dependency(
     link_with: appimage_shared,
-    include_directories: libappimage_include_directories,
-    dependencies: libappimage_hashlib,
+    dependencies: appimage_deps,
 )
 
 # TODO: implement cmake export module
