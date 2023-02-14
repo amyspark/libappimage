@@ -49,7 +49,7 @@ libappimage_legacy_sources = files(
     'libappimage_legacy.cpp',
 )
 
-libappimage_lib = library(
+libappimage_lib = shared_library(
     'appimage',
     libappimage_sources,
     libappimage_legacy_sources,
