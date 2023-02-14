@@ -19,7 +19,7 @@ libappimage_private_deps = [
     xdg_basedir_dep,
     xdg_utils_desktop_entry,
     xdg_utils_base_dir, 
-    libappimage_hashlib_dep,
+    libappimage_hashlib,
     libsquashfuse,
     xz,
     boost,

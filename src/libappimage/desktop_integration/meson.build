@@ -14,7 +14,7 @@ desktop_integration_include_directories = libappimage_include_directories + incl
 
 appimage_desktop_integration = declare_dependency(
     sources: appimage_desktop_integration_sources,
-    dependencies: [libappimage_hashlib_dep, boost, libarchive, libsquashfuse, libglib, xdg_utils_desktop_entry, xdg_utils_base_dir],
+    dependencies: [libappimage_hashlib, boost, libarchive, libsquashfuse, libglib, xdg_utils_desktop_entry, xdg_utils_base_dir],
     compile_args: libappimage_module_flags,
     include_directories: desktop_integration_include_directories,
 )
