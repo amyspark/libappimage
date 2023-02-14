@@ -1,0 +1,3 @@
+option('desktop_integration', type : 'boolean', value : true, description : 'Enable desktop integration functions')
+option('thumbnailer', type : 'boolean', value : true, description : 'Enable thumbnailer functions')
+option('shared_only', type : 'boolean', value : false, description : 'Build and distribute shared and hashlib only (for use with AppImageKit and AppImageUpdate)')
