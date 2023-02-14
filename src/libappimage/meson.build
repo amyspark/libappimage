@@ -19,7 +19,7 @@ libappimage_private_deps = [
     libarchive,
     xdg_basedir,
     xdg_utils_desktop_entry,
-    xdg_utils_base_dir, 
+    xdg_utils_base_dir,
     libappimage_hashlib,
     libsquashfuse,
     xz,
@@ -32,11 +32,7 @@ if desktop_integration.enabled()
     libappimage_private_deps += appimage_desktop_integration
 endif
 
-libappimage_public_deps = [
-    libappimage_shared,
-    libcairo,
-    librsvg
-]
+libappimage_public_deps = [libappimage_shared, libcairo, librsvg]
 
 libappimage_deps = libappimage_private_deps + libappimage_public_deps
 libappimage_incs = include_directories('.')

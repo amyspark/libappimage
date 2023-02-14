@@ -1,13 +1,11 @@
 test_desktop_integration_sources = files(
-    'TestIntegrationManager.cpp',
-    'integrator/TestDesktopIntegration.cpp',
     'integrator/TestDesktopEntryEditor.cpp',
+    'integrator/TestDesktopIntegration.cpp',
+    'TestIntegrationManager.cpp',
 )
 
 if thumbnailer.enabled()
-    test_desktop_integration_sources += files(
-        'TestThumbnailer.cpp'
-    )
+    test_desktop_integration_sources += files('TestThumbnailer.cpp')
 endif
 
 test_desktop_integration_deps = [

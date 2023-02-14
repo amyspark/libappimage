@@ -35,7 +35,7 @@ test_shared = executable(
     test_shared_files,
     dependencies: [fixtures, libappimage_shared],
     # needed for some const->non-const conversions
-    cpp_args: cxx.get_supported_arguments('-fpermissive')
+    cpp_args: cxx.get_supported_arguments('-fpermissive'),
 )
 
 test('test_shared', test_shared)

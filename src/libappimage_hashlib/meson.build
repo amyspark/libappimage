@@ -1,6 +1,4 @@
-libappimage_hashlib_files = files(
-    'md5.c'
-)
+libappimage_hashlib_files = files('md5.c')
 
 libappimage_hashlib_incs = include_directories('include')
 

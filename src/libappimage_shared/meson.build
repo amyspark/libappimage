@@ -1,7 +1,7 @@
 libappimage_shared_files = files(
+    'digest.c',
     'elf.c',
     'hexlify.c',
-    'digest.c',
 )
 
 appimage_deps = [libappimage_module_definitions, libappimage_hashlib]

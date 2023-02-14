@@ -12,16 +12,13 @@ if thumbnailer.enabled()
     cfg.set10('LIBAPPIMAGE_THUMBNAILER_ENABLED', true)
 endif
 
-config_h = configure_file(
-    configuration: cfg,
-    output: 'config.h'
-)
+config_h = configure_file(configuration: cfg, output: 'config.h')
 
 headers = files(
     'appimage++.h',
-    'appimage_shared.h',
-    'appimage_legacy.h',
     'appimage.h',
+    'appimage_legacy.h',
+    'appimage_shared.h',
 )
 
 install_headers(
@@ -30,11 +27,11 @@ install_headers(
 )
 
 headers_core = files(
-    'core/PayloadIterator.h',
-    'core/PayloadEntryType.h',
-    'core/AppImageFormat.h',
-    'core/exceptions.h',
     'core/AppImage.h',
+    'core/AppImageFormat.h',
+    'core/PayloadEntryType.h',
+    'core/PayloadIterator.h',
+    'core/exceptions.h',
 )
 
 install_headers(
