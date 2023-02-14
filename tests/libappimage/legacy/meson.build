@@ -1,6 +1,6 @@
 fixtures = declare_dependency(
     include_directories: include_directories('.'),
-    dependencies: [test_dep, gtest, xdg_basedir],
+    dependencies: [test_definitions, gtest, xdg_basedir],
 )
 
 test_libappimage_files = files(

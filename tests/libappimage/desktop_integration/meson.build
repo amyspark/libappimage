@@ -12,7 +12,7 @@ endif
 
 test_desktop_integration_deps = [
     core,
-    test_dep,
+    test_definitions,
     appimage_utils,
     appimage_desktop_integration,
     temporarydirectory_dep,
