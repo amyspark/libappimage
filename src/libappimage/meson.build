@@ -53,7 +53,7 @@ libappimage_legacy_sources = files(
     'libappimage_legacy.cpp',
 )
 
-libappimage_lib = shared_library(
+libappimage_lib = library(
     'appimage',
     libappimage_sources,
     libappimage_legacy_sources,
@@ -67,5 +67,3 @@ libappimage = declare_dependency(
     dependencies: libappimage_public_deps,
     include_directories: libappimage_incs,
 )
-
-# todo: implement cmake export

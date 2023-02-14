@@ -15,7 +15,7 @@ test_desktop_integration_deps = [
     test_definitions,
     appimage_utils,
     appimage_desktop_integration,
-    temporarydirectory_dep,
+    temporarydirectory,
     libappimage,
     libappimage_shared,
     libsquashfuse,

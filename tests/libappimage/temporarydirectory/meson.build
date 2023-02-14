@@ -7,7 +7,7 @@ temporarydirectory_lib = library(
     temporarydirectory_files,
 )
 
-temporarydirectory_dep = declare_dependency(
+temporarydirectory = declare_dependency(
     link_with: temporarydirectory_lib,
     include_directories: include_directories('.')
 )
