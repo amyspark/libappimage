@@ -1,0 +1,42 @@
+#----------------------------------------------------------------
+# Generated CMake target import file.
+#----------------------------------------------------------------
+
+# Commands may need to know the format version.
+set(CMAKE_IMPORT_FILE_VERSION 1)
+
+# Import target "libappimage_hashlib" for configuration ""
+set_property(TARGET libappimage_hashlib APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+set_target_properties(libappimage_hashlib PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
+  IMPORTED_LOCATION_NOCONFIG "${_IMPORT_PREFIX}/lib/libappimage_hashlib.a"
+  )
+
+list(APPEND _cmake_import_check_targets libappimage_hashlib )
+list(APPEND _cmake_import_check_files_for_libappimage_hashlib "${_IMPORT_PREFIX}/lib/libappimage_hashlib.a" )
+
+# Import target "libappimage_shared" for configuration ""
+set_property(TARGET libappimage_shared APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+set_target_properties(libappimage_shared PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
+  IMPORTED_LOCATION_NOCONFIG "${_IMPORT_PREFIX}/lib/libappimage_shared.a"
+  )
+
+list(APPEND _cmake_import_check_targets libappimage_shared )
+list(APPEND _cmake_import_check_files_for_libappimage_shared "${_IMPORT_PREFIX}/lib/libappimage_shared.a" )
+
+if (NOT @LIBAPPIMAGE_SHARED_ONLY@)
+# Import target "libappimage" for configuration ""
+set_property(TARGET libappimage APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+set_target_properties(libappimage PROPERTIES
+  IMPORTED_LINK_DEPENDENT_LIBRARIES_NOCONFIG "Boost::filesystem"
+  IMPORTED_LOCATION_NOCONFIG "${_IMPORT_PREFIX}/lib/libappimage.so.@VERSION@"
+  IMPORTED_SONAME_NOCONFIG "libappimage.so.@SOVERSION@"
+  )
+
+list(APPEND _cmake_import_check_targets libappimage )
+list(APPEND _cmake_import_check_files_for_libappimage "${_IMPORT_PREFIX}/lib/libappimage.so.@VERSION@" )
+endif()
+
+# Commands beyond this point should not need to know the version.
+set(CMAKE_IMPORT_FILE_VERSION)

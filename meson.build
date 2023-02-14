@@ -12,11 +12,12 @@ v = meson.project_version().split('.')
 v_major = v[0]
 v_minor = v[1]
 v_patch = v[2]
+soversion = '@0@.@1@'.format(v_major, v_minor)
 
 cxx = meson.get_compiler('cpp')
 
 if get_option('buildtype') == 'release'
-    add_project_arguments(cxx.get_supported_arguments('-Wl,-gc-sections'))
+    add_project_arguments(cxx.get_supported_link_arguments('-Wl,--gc-sections'), language: 'cpp')
 endif
 
 desktop_integration = get_option('desktop_integration')
@@ -74,3 +75,4 @@ gtest = dependency('gtest_main', disabler: true)
 subdir('include')
 subdir('src')
 subdir('tests')
+subdir('cmake')

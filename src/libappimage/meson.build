@@ -55,6 +55,8 @@ libappimage_lib = library(
     libappimage_legacy_sources,
     include_directories: libappimage_incs,
     dependencies: libappimage_deps,
+    version: meson.project_version(),
+    soversion: soversion,
     install: true,
 )
 
