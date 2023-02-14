@@ -4,15 +4,17 @@ appimage_desktop_integration_sources = files(
     'integrator/DesktopEntryEditor.cpp',
 )
 
-if get_option('thumbnailer').enabled()
+if thumbnailer.enabled()
     appimage_desktop_integration_sources += files(
         'Thumbnailer.cpp'
     )
 endif
 
+desktop_integration_include_directories = libappimage_include_directories + include_directories('.') 
+
 appimage_desktop_integration = declare_dependency(
     sources: appimage_desktop_integration_sources,
     dependencies: [libappimage_hashlib_dep, boost, libarchive, libsquashfuse, libglib, xdg_utils_desktop_entry, xdg_utils_base_dir],
     compile_args: libappimage_module_flags,
-    include_directories: libappimage_include_directories,
+    include_directories: desktop_integration_include_directories,
 )

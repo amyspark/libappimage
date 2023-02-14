@@ -1,1 +1,1 @@
-libappimage_include_directories = include_directories('.')
+libappimage_include_directories = [include_directories('.')]

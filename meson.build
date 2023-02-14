@@ -5,6 +5,7 @@ project('libappimage', 'c', 'cpp',
 cxx = meson.get_compiler('cpp')
 
 desktop_integration = get_option('desktop_integration')
+thumbnailer = get_option('thumbnailer')
 
 # TODO: implement git describe --tags -C $MESON_SOURCE_ROOT
 # with fallback to project version and store in -DGIT_COMMIT

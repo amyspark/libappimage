@@ -23,8 +23,7 @@ test_libappimagepp_files = files(
 test_libappimagepp = executable(
     'test_libappimage++',
     test_libappimagepp_files,
-    dependencies: [libarchive, libsquashfuse, xdg_utils_desktop_entry, xdg_utils_base_dir, gtest],
-    link_with: [libappimage, temporarydirectory],
+    dependencies: [test_dep, temporarydirectory_dep, libappimage, libarchive, libsquashfuse, xdg_utils_desktop_entry, xdg_utils_base_dir, gtest],
 )
 
 test('test_libappimage++', test_libappimagepp)

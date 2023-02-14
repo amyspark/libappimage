@@ -14,6 +14,6 @@ appimage_utils_sources = files(
 
 appimage_utils = declare_dependency(
     sources: appimage_utils_sources,
-    dependencies: [boost, xdg_utils_desktop_entry, xdg_utils_base_dir, libcairo, librsvg],
-    link_with: [libappimage_hashlib],
+    dependencies: [libappimage_hashlib_dep, boost, xdg_utils_desktop_entry, xdg_utils_base_dir, libcairo, librsvg],
+    include_directories: include_directories('.'),
 )
