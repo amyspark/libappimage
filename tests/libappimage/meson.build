@@ -1,7 +1,7 @@
 subdir('legacy')
 subdir('temporarydirectory')
 
-if desktop_integration
+if desktop_integration.enabled()
     subdir('desktop_integration')
 endif
 
@@ -23,7 +23,8 @@ test_libappimagepp_files = files(
 test_libappimagepp = executable(
     'test_libappimage++',
     test_libappimagepp_files,
-    dependencies: [temporarydirectory]
+    dependencies: [libarchive, libsquashfuse, xdg_utils_desktop_entry, xdg_utils_base_dir, gtest],
+    link_with: [libappimage, temporarydirectory],
 )
 
 test('test_libappimage++', test_libappimagepp)
