@@ -1,5 +1,7 @@
 project('libappimage', 'c', 'cpp',
   version : '1.0.3',
+  license: 'MIT',
+  meson_version: '>=0.54',
   default_options : ['warning_level=3', 'c_std=gnu99', 'cpp_std=c++17'])
 
 cxx = meson.get_compiler('cpp')
