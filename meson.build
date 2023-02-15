@@ -34,9 +34,9 @@ libappimage_module_definitions = declare_dependency(
 )
 
 # cmake/dependencies.cmake
-xz = dependency('liblzma', required: enable_all_targets)
-libsquashfuse = dependency('squashfuse', required: enable_all_targets)
-libarchive = dependency('libarchive', required: enable_all_targets)
+xz = dependency('liblzma', static: true, required: enable_all_targets)
+libsquashfuse = dependency('squashfuse', static: true, required: enable_all_targets)
+libarchive = dependency('libarchive', static: true, required: enable_all_targets)
 boost = dependency('boost', required: enable_all_targets)
 xdg_utils_desktop_entry = dependency(
     'XdgUtils',
